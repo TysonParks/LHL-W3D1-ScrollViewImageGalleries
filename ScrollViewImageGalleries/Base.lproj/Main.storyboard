@@ -37,22 +37,36 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+            <point key="canvasLocation" x="-84" y="127"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="BYY-UQ-TPN">
             <objects>
-                <viewController id="kNc-yk-az3" sceneMemberID="viewController">
+                <viewController id="kNc-yk-az3" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mwR-pd-NjS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rg3-O3-9oC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rg3-O3-9oC" firstAttribute="top" secondItem="mwR-pd-NjS" secondAttribute="top" id="R4h-ub-VuD"/>
+                            <constraint firstAttribute="bottom" secondItem="Rg3-O3-9oC" secondAttribute="bottom" id="WGQ-Iq-rVK"/>
+                            <constraint firstAttribute="trailing" secondItem="Rg3-O3-9oC" secondAttribute="trailing" id="Wgb-rs-l63"/>
+                            <constraint firstItem="Rg3-O3-9oC" firstAttribute="leading" secondItem="mwR-pd-NjS" secondAttribute="leading" id="Ybg-hD-ldF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f90-wY-mhK"/>
                     </view>
+                    <connections>
+                        <outlet property="detailScrollView" destination="Rg3-O3-9oC" id="QOD-U2-bTu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oO-SY-2P3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="118"/>
+            <point key="canvasLocation" x="762" y="126"/>
         </scene>
     </scenes>
 </document>
