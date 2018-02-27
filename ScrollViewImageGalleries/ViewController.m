@@ -12,6 +12,7 @@
 @interface ViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (strong, nonatomic) NSMutableArray <UIImageView *> *imageViewsArray;
 //@property (strong, nonatomic) UIImageView *lightHouseImageView;
@@ -85,7 +86,11 @@
     }
 }
 
-
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    int currentPageIndex = self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
+    self.pageControl.currentPage = currentPageIndex;
+    NSLog(@"Current page index: %d", currentPageIndex);
+}
 
 
 

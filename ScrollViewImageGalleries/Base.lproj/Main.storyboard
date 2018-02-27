@@ -18,27 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RaW-hm-oNY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaW-hm-oNY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lEV-Zd-g4v">
-                                        <rect key="frame" x="158.5" y="318.5" width="50" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="kLU-E2-WOi"/>
-                                            <constraint firstAttribute="width" constant="50" id="kiB-U3-9HF"/>
-                                        </constraints>
-                                    </pageControl>
-                                </subviews>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="lEV-Zd-g4v" firstAttribute="centerY" secondItem="RaW-hm-oNY" secondAttribute="centerY" id="RMW-tq-SGJ"/>
-                                    <constraint firstItem="lEV-Zd-g4v" firstAttribute="centerX" secondItem="RaW-hm-oNY" secondAttribute="centerX" constant="-4" id="xUE-Rl-XEv"/>
-                                </constraints>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="lEV-Zd-g4v">
+                                <rect key="frame" x="137" y="550.5" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kLU-E2-WOi"/>
+                                    <constraint firstAttribute="width" constant="100" id="kiB-U3-9HF"/>
+                                </constraints>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="lEV-Zd-g4v" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="200" id="MV9-ie-IFS"/>
                             <constraint firstItem="RaW-hm-oNY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RKe-xX-m3u"/>
+                            <constraint firstItem="lEV-Zd-g4v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UkT-wb-OUL"/>
                             <constraint firstItem="RaW-hm-oNY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wbd-sF-yHI"/>
                             <constraint firstItem="RaW-hm-oNY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hXq-YU-Dwp"/>
                             <constraint firstItem="RaW-hm-oNY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wXf-fU-4sc"/>
@@ -47,6 +43,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="AiQ-8E-mQj"/>
                     <connections>
+                        <outlet property="pageControl" destination="lEV-Zd-g4v" id="DMk-kn-F0m"/>
                         <outlet property="scrollView" destination="RaW-hm-oNY" id="etW-1E-Bqe"/>
                         <segue destination="kNc-yk-az3" kind="show" identifier="segue" id="lLu-wn-udJ"/>
                     </connections>
