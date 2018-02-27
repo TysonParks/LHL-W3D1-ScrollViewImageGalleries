@@ -14,6 +14,7 @@
 		AD9F91AF2044D97200E7EE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD9F91AD2044D97200E7EE64 /* LaunchScreen.storyboard */; };
 		AD9F91B22044D97200E7EE64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD9F91B12044D97200E7EE64 /* main.m */; };
 		AD9F91B92044DA4900E7EE64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD9F91B82044DA4900E7EE64 /* Images.xcassets */; };
+		AD9F91BB2044EF9800E7EE64 /* Lighthouse-in-Field.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD9F91BA2044EF9800E7EE64 /* Lighthouse-in-Field.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		AD9F91B02044D97200E7EE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD9F91B12044D97200E7EE64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD9F91B82044DA4900E7EE64 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "ScrollView-Images/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		AD9F91BA2044EF9800E7EE64 /* Lighthouse-in-Field.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lighthouse-in-Field.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				AD9F91A62044D97200E7EE64 /* ViewController.m */,
 				AD9F91B82044DA4900E7EE64 /* Images.xcassets */,
 				AD9F91AB2044D97200E7EE64 /* Assets.xcassets */,
+				AD9F91BA2044EF9800E7EE64 /* Lighthouse-in-Field.jpg */,
 				AD9F91AD2044D97200E7EE64 /* LaunchScreen.storyboard */,
 				AD9F91B02044D97200E7EE64 /* Info.plist */,
 				AD9F91B12044D97200E7EE64 /* main.m */,
@@ -136,6 +139,7 @@
 				AD9F91B92044DA4900E7EE64 /* Images.xcassets in Resources */,
 				AD9F91AC2044D97200E7EE64 /* Assets.xcassets in Resources */,
 				AD9F91AA2044D97200E7EE64 /* Main.storyboard in Resources */,
+				AD9F91BB2044EF9800E7EE64 /* Lighthouse-in-Field.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

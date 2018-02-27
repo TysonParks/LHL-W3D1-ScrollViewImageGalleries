@@ -14,7 +14,8 @@
 
 @property (strong, nonatomic) NSMutableArray <UIImageView *> *imageViewsArray;
 
--(void)setupViews;
+-(void)setupViewsExplicit;
+-(void)setupViewsIterative;
 
 @end
 
@@ -26,13 +27,48 @@
     [self.scrollView setPagingEnabled:YES];
     [self.scrollView setDelegate:self];
     
-    [self setupViews];
+    [self setupViewsIterative];
     
     
     
 }
 
--(void)setupViews {
+-(void)setupViewsIterative {
+    
+        for (int i = 0; i<3; i++) {
+    
+            UIImageView *lightHouseImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width * i), 0.0, self.view.frame.size.width, self.view.frame.size.height)];
+            
+            switch (i) {
+                case 0:
+                    lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-in-Field"];
+                    break;
+    
+                case 1:
+                    lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-night"];
+                    break;
+                    
+                case 2:
+                    lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-zoomed"];
+                    break;
+              }
+            [self.imageViewsArray addObject:lightHouseImageView];
+            [self.scrollView addSubview:lightHouseImageView];
+            lightHouseImageView.contentMode = UIViewContentModeScaleAspectFit;
+            
+            }
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width * self.imageViewsArray.count, 0.0)];
+    
+}
+
+
+
+
+
+
+
+
+-(void)setupViewsExplicit {
     UIImage *lHInField = [UIImage imageNamed:@"Lighthouse-in-Field"];
     UIImage *lHNight = [UIImage imageNamed:@"Lighthouse-night"];
     UIImage *lHZoomed = [UIImage imageNamed:@"Lighthouse-zoomed"];
@@ -42,6 +78,7 @@
     UIImageView *lHZoomedView = [[UIImageView alloc]initWithImage:lHZoomed];
     
     lHInFieldView.frame = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height);
+    
     lHNightView.frame = CGRectMake(self.view.frame.size.width, 0.0, self.view.frame.size.width, self.view.frame.size.height);
     lHZoomedView.frame = CGRectMake(self.view.frame.size.width * 2, 0.0, self.view.frame.size.width, self.view.frame.size.height);
     
@@ -61,23 +98,7 @@
      
     
     
-    //    for (int i = 0; i<3; i++) {
-    //
-    //        UIImageView *LHImageView = [UIImageView alloc]init
-    //        switch (i) {
-    //            case 0:
-    //                [self.imageViewsArray addObject:LHInFieldView];
-    //                break;
-    //
-    //            case 1:
-    //                [self.imageViewsArray addObject:LHNightView];
-    //                break;
-    //
-    //            case 2:
-    //                [self.imageViewsArray addObject:LHZoomedView];
-    //                break;
-    //          }
-    //        }
+  
     
 }
 
