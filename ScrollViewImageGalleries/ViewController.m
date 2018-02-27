@@ -96,10 +96,6 @@
     
     [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width * self.imageViewsArray.count, 0.0)];
      
-    
-    
-  
-    
 }
 
 @end
