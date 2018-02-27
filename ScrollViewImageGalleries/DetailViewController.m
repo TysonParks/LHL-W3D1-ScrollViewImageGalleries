@@ -21,8 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.zoomImageView.image = self.currentImage;
     [self.detailScrollView setDelegate:self];
 }
+
+
 
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

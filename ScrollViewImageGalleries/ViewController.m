@@ -6,19 +6,21 @@
 //  Copyright © 2018 Tyson Parks. All rights reserved.
 //
 
-#import "ViewController.h" <
+#import "ViewController.h"
+#import "DetailViewController.h"
 
 @interface ViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (strong, nonatomic) NSMutableArray <UIImageView *> *imageViewsArray;
-@property (strong, nonatomic) UIImageView *lightHouseImageView;
+//@property (strong, nonatomic) UIImageView *lightHouseImageView;
 @property (strong, nonatomic) UIImageView *imageTapped;
 
 -(void)setupViewsExplicit;
 -(void)setupViewsIterative;
-
+//- (void)tapGesturePageView:(id)sender;
+;
 @end
 
 @implementation ViewController
@@ -39,24 +41,28 @@
     
         for (int i = 0; i<3; i++) {
     
-            self.lightHouseImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width * i), 0.0, self.view.frame.size.width, self.view.frame.size.height)];
+            UIImageView *lightHouseImageView = [[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width * i), 0.0, self.view.frame.size.width, self.view.frame.size.height)];
             
             switch (i) {
                 case 0:
-                    self.lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-in-Field"];
+                    lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-in-Field"];
                     break;
     
                 case 1:
-                    self.lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-night"];
+                    lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-night"];
                     break;
                     
                 case 2:
-                    self.lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-zoomed"];
+                    lightHouseImageView.image = [UIImage imageNamed:@"Lighthouse-zoomed"];
                     break;
               }
-            [self.imageViewsArray addObject:self.lightHouseImageView];
-            [self.scrollView addSubview:self.lightHouseImageView];
-            self.lightHouseImageView.contentMode = UIViewContentModeScaleAspectFit;
+            [self.imageViewsArray addObject:lightHouseImageView];
+            [self.scrollView addSubview:lightHouseImageView];
+            
+            [lightHouseImageView setUserInteractionEnabled:true];
+            lightHouseImageView.contentMode = UIViewContentModeScaleAspectFit;
+            UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesturePageView:)];
+            [lightHouseImageView addGestureRecognizer:tapRecognizer];
             
             }
     [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width * self.imageViewsArray.count, 0.0)];
@@ -64,10 +70,19 @@
 }
 
 
-- (IBAction)tapGesturePageView:(id)sender {
-    self.imageTapped = self.lightHouseImageView;
-    NSLog(@"Hello!");
-    [self performSegueWithIdentifier:@"segue" sender:sender];
+- (void)tapGesturePageView:(UIGestureRecognizer *)sender {
+//    self.imageTapped = self.lightHouseImageView;
+    [self performSegueWithIdentifier:@"segue" sender:sender.view];
+    
+    NSLog(@"Hello");
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"segue"]) {
+        DetailViewController *destinationViewController =  segue.destinationViewController;
+        UIImageView *sourceImageView = sender;
+        destinationViewController.currentImage = sourceImageView.image;
+    }
 }
 
 
