@@ -22,8 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.scrollView setDelegate:self];
     self.imageViewsArray = [[NSMutableArray alloc]init];
+    [self.scrollView setPagingEnabled:YES];
+    [self.scrollView setDelegate:self];
+    
     [self setupViews];
     
     
@@ -43,12 +45,16 @@
     lHNightView.frame = CGRectMake(self.view.frame.size.width, 0.0, self.view.frame.size.width, self.view.frame.size.height);
     lHZoomedView.frame = CGRectMake(self.view.frame.size.width * 2, 0.0, self.view.frame.size.width, self.view.frame.size.height);
     
-    [self.view addSubview:lHInFieldView];
-    [self.view addSubview:lHNightView];
-    [self.view addSubview:lHZoomedView];
+    [self.scrollView addSubview:lHInFieldView];
+    [self.scrollView addSubview:lHNightView];
+    [self.scrollView addSubview:lHZoomedView];
     
+    [self.imageViewsArray addObject:lHInFieldView];
+    [self.imageViewsArray addObject:lHNightView];
+    [self.imageViewsArray addObject:lHZoomedView];
     
-    
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width * self.imageViewsArray.count, 0.0)];
+     
     
     
     //    for (int i = 0; i<3; i++) {
