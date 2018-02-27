@@ -62,9 +62,9 @@
 			children = (
 				AD9F91A22044D97200E7EE64 /* AppDelegate.h */,
 				AD9F91A32044D97200E7EE64 /* AppDelegate.m */,
+				AD9F91A82044D97200E7EE64 /* Main.storyboard */,
 				AD9F91A52044D97200E7EE64 /* ViewController.h */,
 				AD9F91A62044D97200E7EE64 /* ViewController.m */,
-				AD9F91A82044D97200E7EE64 /* Main.storyboard */,
 				AD9F91AB2044D97200E7EE64 /* Assets.xcassets */,
 				AD9F91AD2044D97200E7EE64 /* LaunchScreen.storyboard */,
 				AD9F91B02044D97200E7EE64 /* Info.plist */,
