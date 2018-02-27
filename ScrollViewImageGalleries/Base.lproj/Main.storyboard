@@ -47,8 +47,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rg3-O3-9oC">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" minimumZoomScale="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Rg3-O3-9oC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-in-Field" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-Aw-O69" userLabel="Zoom View">
+                                        <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ie7-Aw-O69" secondAttribute="trailing" id="DOX-DS-78q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ie7-Aw-O69" secondAttribute="bottom" id="Dh6-5C-hPw"/>
+                                    <constraint firstItem="Ie7-Aw-O69" firstAttribute="top" secondItem="Rg3-O3-9oC" secondAttribute="top" id="MaN-wB-hrk"/>
+                                    <constraint firstItem="Ie7-Aw-O69" firstAttribute="leading" secondItem="Rg3-O3-9oC" secondAttribute="leading" id="YvM-IT-bdK"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,11 +73,15 @@
                     </view>
                     <connections>
                         <outlet property="detailScrollView" destination="Rg3-O3-9oC" id="QOD-U2-bTu"/>
+                        <outlet property="zoomImageView" destination="Ie7-Aw-O69" id="SaW-ID-DGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1oO-SY-2P3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="126"/>
+            <point key="canvasLocation" x="760.79999999999995" y="125.4872563718141"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lighthouse-in-Field" width="960" height="540"/>
+    </resources>
 </document>

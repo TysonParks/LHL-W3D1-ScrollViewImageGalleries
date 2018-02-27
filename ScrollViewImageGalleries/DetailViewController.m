@@ -11,6 +11,9 @@
 @interface DetailViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *detailScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *zoomImageView;
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView;
 
 @end
 
@@ -19,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.detailScrollView setDelegate:self];
+}
+
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return _zoomImageView;
 }
 
 
