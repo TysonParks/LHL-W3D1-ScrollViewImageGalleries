@@ -12,6 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (strong, nonatomic) NSMutableArray <UIImageView *> *imageViewsArray;
+
+-(void)setupViews;
+
 @end
 
 @implementation ViewController
@@ -23,11 +27,11 @@
 
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setupViews {
+    for (inti = 0; i<3; i++) {
+        [self.imageViewsArray addObject:<#(nonnull UIImageView *)#>];
+        
+    }
 }
-
 
 @end
