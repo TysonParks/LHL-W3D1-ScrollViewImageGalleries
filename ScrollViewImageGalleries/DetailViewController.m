@@ -26,7 +26,7 @@
 
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return _zoomImageView;
+    return self.zoomImageView;
 }
 
 
