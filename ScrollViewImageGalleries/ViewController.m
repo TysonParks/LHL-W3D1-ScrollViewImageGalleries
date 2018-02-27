@@ -49,6 +49,10 @@
     [self.scrollView addSubview:lHNightView];
     [self.scrollView addSubview:lHZoomedView];
     
+    lHInFieldView.contentMode = UIViewContentModeScaleAspectFit;
+    lHNightView.contentMode = UIViewContentModeScaleAspectFit;
+    lHZoomedView.contentMode = UIViewContentModeScaleAspectFit;
+    
     [self.imageViewsArray addObject:lHInFieldView];
     [self.imageViewsArray addObject:lHNightView];
     [self.imageViewsArray addObject:lHZoomedView];
